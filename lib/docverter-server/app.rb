@@ -50,6 +50,6 @@ class DocverterServer::App < Sinatra::Base
   end
 
   get '/' do
-    'hi'
+    'pizza'
   end
 end
