@@ -50,6 +50,6 @@ class DocverterServer::App < Sinatra::Base
   end
 
   get '/' do
-    'pizza'
+    "#{request.ip}"
   end
 end
