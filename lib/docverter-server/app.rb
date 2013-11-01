@@ -8,7 +8,7 @@ class DocverterServer::App < Sinatra::Base
   set :raise_errors, true
   
   post '/convert' do
-    if request.ip == ENV.['ALLOWED_IP'] || ENV['DEV_IP']
+    if request.ip == ENV['ALLOWED_IP'] ||request.ip ==  ENV['DEV_IP']
       dir = Dir.mktmpdir
 
       Dir.chdir(dir) do
@@ -50,7 +50,7 @@ class DocverterServer::App < Sinatra::Base
   end
 
   get '/' do
-    if request.ip == ENV.['ALLOWED_IP'] || ENV['DEV_IP']
+    if request.ip == ENV['ALLOWED_IP'] || request.ip == ENV['DEV_IP']
       "#{request.ip}"
     end
   end
